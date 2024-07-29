@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  name          String?
+  password      String
+  refreshTokens String[] @default([])
+  heroes        Hero[]
+
+  @@map("users")
+}
+
+model Hero {
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(80)
+  role       String   @db.VarChar(80)
+  abilities  String   @db.VarChar(80)
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int @default(1)
+
+  @@map("heroes")
+}
+
+model Category {
+  id     Int    @id @default(autoincrement())
+  name   String @unique @db.VarChar(80)
+  heroes Hero[]
+
+  @@map("categories")
+}
