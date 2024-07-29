@@ -12,7 +12,8 @@ const createCategory = async (req, res) => {
     res.json(category);
   } catch (error) {
     res.status(500).json({ error: error.message });
-  }
+  }finally{
+    await prisma.$disconnect();}
 };
 
 const getCategories = async (req, res) => {
@@ -21,7 +22,8 @@ const getCategories = async (req, res) => {
     res.json(categories);
   } catch (error) {
     res.status(500).json({ error: error.message });
-  }
+  }finally{
+    await prisma.$disconnect();}
 };
 
 const getCategory = async (req, res) => {
@@ -36,6 +38,8 @@ const getCategory = async (req, res) => {
     res.json(category);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  } finally {
+    await prisma.$disconnect();
   }
 };
 
@@ -50,7 +54,8 @@ const updateCategory = async (req, res) => {
     res.json(category);
   } catch (error) {
     res.status(500).json({ error: error.message });
-  }
+  }finally{
+    await prisma.$disconnect();}  
 };
 
 const deleteCategory = async (req, res) => {
@@ -62,6 +67,8 @@ const deleteCategory = async (req, res) => {
     res.json({ message: "Category deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally {
+    await prisma.$disconnect();
   }
 };
 

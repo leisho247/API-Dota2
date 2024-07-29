@@ -13,6 +13,8 @@ const createUser = async (req, res) => {
     res.json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -28,6 +30,8 @@ const getUser = async (req, res) => {
     res.json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -56,6 +60,8 @@ const updateUser = async (req, res) => {
     res.json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -66,6 +72,8 @@ const deleteUser = async (req, res) => {
     res.json({ message: "User deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -82,6 +90,8 @@ const getUserHeroes = async (req, res) => {
     res.json(user.heroes);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 

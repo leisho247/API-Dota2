@@ -11,6 +11,8 @@ const createHero = async (req, res) => {
     res.json(hero);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -20,6 +22,8 @@ const getAllHeroes = async (req, res) => {
     res.json(heroes);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -35,6 +39,8 @@ const getHeroById = async (req, res) => {
     res.json(hero);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -49,6 +55,8 @@ const updateHero = async (req, res) => {
     res.json(hero);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
@@ -61,6 +69,8 @@ const deleteHero = async (req, res) => {
     res.json({ message: "Hero deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }finally{
+    await prisma.$disconnect();
   }
 };
 
