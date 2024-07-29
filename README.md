@@ -9,7 +9,6 @@ Una API para gestionar Heroes , incluyendo autenticacion de usuarios y clasifica
 - [Requisitos-Previos] (#Requisitos-Previos)
 - [Endpoints] (#Endpoints)
 
-
 ## Caracteristicas
 
 - Regsitro e inicio de sesion de usuarios.
@@ -108,28 +107,34 @@ Category
 
 ```json
 {
-    "email": "user@Example.com",
-    "name": "User Name",
-    "password": "password123"
+  "email": "user@Example.com",
+  "name": "User Name",
+  "password": "password123"
 }
+```
 
-#### Login User
-URL: POST /auth/login
-Headers: Content-Type: application/json
-Body (JSON):
-json
+### Login User
 
+- URL: POST /auth/login
+- Headers: Content-Type: application/json
+- Body (JSON):
+- json
+
+```json
 {
   "email": "user@example.com",
   "password": "yourpassword"
 }
-Response (Success):
-json
+```
+
+#### Response (Success):
+```json 
 
 {
   "token": "jwt.token.here"
 }
 
+```
 
 #### Hero Routes
 
@@ -140,25 +145,25 @@ Headers:
 Content-Type: application/json
 Authorization: Bearer <token>
 Body (JSON):
-json
 
+```json
 {
   "name": "Hero Name",
   "role": "Hero Role",
   "abilities": "Ability1, Ability2, Ability3",
   "userId": 1
 }
+```
 
-### crear hero con categoria
+#### Crear hero con categoria
+
 URL: POST /heroes
 Headers:
 Content-Type: application/json
 Authorization: Bearer <token>
 Body (JSON):
-json
 
-
-
+```json
 {
   "name": "Hero Name",
   "role": "Hero Role",
@@ -166,12 +171,11 @@ json
   "userId": 1,
   "categoryId": 2
 }
-
-
-
+```
 
 #### Response (Success):
-json
+
+```json
 {
   "id": 1,
   "name": "Hero Name",
@@ -179,15 +183,17 @@ json
   "abilities": "Ability1, Ability2, Ability3",
   "categoryId": 1
 }
+```
 
 #### Get All Heroes
+
 URL: GET /heroes
 Headers:
 Authorization: Bearer <token>
 
-#### Response (Success):
-json
+Response (Success):
 
+```json
 [
   {
     "id": 1,
@@ -197,24 +203,28 @@ json
     "categoryId": 1
   }
 ]
+```
 
 #### User Routes
- Create User
+
+Create User
 URL: POST /users
 Headers:
 Content-Type: application/json
 Authorization: Bearer <token>
 Body (JSON):
-json
 
+```json
 {
   "email": "newuser@example.com",
   "name": "New User",
   "password": "newpassword"
 }
-#### Response (Success):
-json
+```
 
+Response (Success):
+
+```json
 {
   "id": 1,
   "email": "newuser@example.com",
@@ -222,6 +232,7 @@ json
   "password": "$2b$10$...",
   "refreshTokens": []
 }
+```
 
 #### Get User by ID
 
@@ -231,9 +242,9 @@ Authorization: Bearer <token>
 Path Params:
 id: The ID of the user to retrieve.
 
-#### Response (Success):
-json
+Response (Success):
 
+```json
 {
   "id": 1,
   "email": "user@example.com",
@@ -241,8 +252,8 @@ json
   "password": "$2b$10$...",
   "refreshTokens": []
 }
-
 ```
+
 #### Autor
 
-|creado po Leonardo Herrera.|
+- Creado po Leonardo Herrera.
