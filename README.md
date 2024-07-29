@@ -141,11 +141,11 @@ Category
 
 Create Hero
 
-URL: POST /heroes
-Headers:
-Content-Type: application/json
-Authorization: Bearer <token>
-Body (JSON):
+- URL: POST /heroes
+- Headers:
+- Content-Type: application/json
+- Authorization: Bearer <token>
+- Body (JSON):
 
 ```json
 {
@@ -156,13 +156,13 @@ Body (JSON):
 }
 ```
 
-#### Crear hero con categoria
+#### Create hero  category
 
-URL: POST /heroes
-Headers:
-Content-Type: application/json
-Authorization: Bearer <token>
-Body (JSON):
+- URL: POST /heroes
+- Headers:
+- Content-Type: application/json
+- Authorization: Bearer <token>
+- Body (JSON):
 
 ```json
 {
@@ -188,9 +188,9 @@ Body (JSON):
 
 #### Get All Heroes
 
-URL: GET /heroes
-Headers:
-Authorization: Bearer <token>
+- URL: GET /heroes
+- Headers:
+- Authorization: Bearer <token>
 
 Response (Success):
 
@@ -209,11 +209,11 @@ Response (Success):
 #### User Routes
 
 Create User
-URL: POST /users
-Headers:
-Content-Type: application/json
-Authorization: Bearer <token>
-Body (JSON):
+- URL: POST /users
+- Headers:
+- Content-Type: application/json
+- Authorization: Bearer <token>
+- Body (JSON):
 
 ```json
 {
@@ -237,11 +237,11 @@ Response (Success):
 
 #### Get User by ID
 
-URL: GET /users/:id
-Headers:
-Authorization: Bearer <token>
-Path Params:
-id: The ID of the user to retrieve.
+- URL: GET /users/:id
+- Headers:
+- Authorization: Bearer <token>
+- Path Params:
+- id: The ID of the user to retrieve.
 
 Response (Success):
 
