@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # DOTA 2 Heroes API
 
 Una API para gestionar Heroes , incluyendo autenticacion de usuarios y clasificacion en fuerza , Agilidad, e Inteligencia.
@@ -259,5 +259,6 @@ Response (Success):
 
 - Creado por Leonardo Herrera.
 =======
+    
 
->>>>>>> fae5a4df62f2fc98e2794b6a15103fe29b22c231
+
