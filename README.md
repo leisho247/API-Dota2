@@ -256,4 +256,4 @@ Response (Success):
 
 #### Autor
 
-- Creado po Leonardo Herrera.
+- Creado por Leonardo Herrera.
